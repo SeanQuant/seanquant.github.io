@@ -93,6 +93,10 @@ page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
 
 <%- partial('_partials/markdown-plugins') %>
 
+<% if (theme.post.donate!=false && theme.post.donate!=false){ %>
+  <%- partial('_partial/donate.ejs') %>
+<% } %>
+
 <% if(theme.post.custom && theme.post.custom.enable && theme.post.custom.content && page.custom !== false) { %>
   <!-- Custom -->
   <div class="col-lg-7 mx-auto nopadding-x-md">

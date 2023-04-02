@@ -945,13 +945,13 @@ about:
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/doge.jpg
-  name: "Fluid"
-  intro: "An elegant theme for Hexo"
+  name: "Sean"
+  intro: "在UCB，Stanford各做过一段时间的RA。去牛津访学过一段时间。 现在在某家头部量化当研究员。"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/SeanQuant", tip: "GitHub" }
+    # - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
     - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
 
 
@@ -1032,6 +1032,11 @@ links:
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
     type: disqus
 
+# 打赏
+# 是否开启打赏功能
+donate: true
+# 打赏文案
+donate_message: 坚持技术分享，你的支持将鼓励我继续创作！
 
 #---------------------------
 # 以下是配置 JS CSS 等静态资源的 URL 前缀，可以自定义成 CDN 地址，
