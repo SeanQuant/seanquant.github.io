@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>从零搭建个人博客-Hexo+Github</title>
+    <link href="/2023/04/02/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Hexo-Github/"/>
+    <url>/2023/04/02/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Hexo-Github/</url>
+    
+    <content type="html"><![CDATA[<h1 id="从零搭建个人博客-Hexo-Github"><a href="#从零搭建个人博客-Hexo-Github" class="headerlink" title="从零搭建个人博客-Hexo+Github"></a>从零搭建个人博客-Hexo+Github</h1><p>这是本博客站的第一篇博客，毫无疑问，将本次建站的完整过程记录下来，作为第一篇博客实在是非常有意义。</p><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在自己建站之前，我在CSDN上已经有相当大规模的浏览量了。但是，考虑到</p><ol><li>写作自由</li><li>流量变现</li><li>学习新技术</li></ol><p>这三种因素，因此决定自己搭建个人博客站。</p><p>在这个过程当中，我学了相当多的技术，探索了很多中建站方案，无论是wordpress，还是个人手动造轮子等。</p><p><strong>但综合来看，还是觉得hexo+Github的方式最合适初次建站。</strong></p><p>原因如下：</p><ol><li><strong>廉价</strong></li></ol><p>一般的服务器，最便宜的海外服务器，一般都是要<code>50美元/年</code>起步的价格。这对很多初学者来说，都应该是一笔算得上是不低的开销。<br>但是从目前这个方案来做的话，因为服务端是放在了Github上，所以实际上是不需要花费任何钱的。</p><ol start="2"><li><strong>效率</strong></li></ol><p>相比于，其他诸如wordpress来说，很多人说着已经有很多预设好的方案，什么一键建站来着，但是实际上，背后引入了太多技术，导致了有相当多的内容需要管理了。而，很多时候，其实就是想要很简单的– <strong>博客好看+方便写</strong>。至于说是像什么数据库管理，降低内存压力，提高超大规模访问容量上限等，这些我觉得对初次建站来说都是意义不大的。</p><ol start="3"><li><strong>简洁</strong></li></ol><p>由于hexo是非常轻量级的框架，虽然对于很多人来说，失去了繁杂的功能，但是我还是比较喜欢简洁化的页面。看着清新简洁的画面，实在是有一种莫名的舒适感。</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>说是从零开始，但是当我真的开始写这篇博客的时候，我也是发现其实还是有很多东西需要考虑的。</p><p><strong>需要准备好的内容:</strong></p><ul><li>Github账户，<a href="https://github.com/">https://github.com/</a> Sign up即可</li><li>本地电脑上，安装，确保在命令行下能用即可<ul><li>Git<ul><li><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li></ul></li><li>nodejs<ul><li><a href="https://nodejs.org/en/download">https://nodejs.org/en/download</a></li></ul></li><li>上述软件安装之后，需要添加到环境变量当中，这样之后才能在命令行下进行操作。</li></ul></li><li>生成本地的ssh-key，上传到个人Github的setting上 <ul><li><a href="https://blog.csdn.net/a19990412/article/details/127839737">https://blog.csdn.net/a19990412/article/details/127839737</a></li></ul></li></ul><h2 id="创建一个的github-io的仓库"><a href="#创建一个的github-io的仓库" class="headerlink" title="创建一个的github.io的仓库"></a>创建一个的github.io的仓库</h2><ul><li>在Github上，创建一个名为<code>&lt;用户名&gt;.github.io</code>的仓库。<ul><li>这里的<code>&lt;用户名&gt;</code>为你Github账户的名字</li><li>全部大写改成小写</li><li>比如，我的Github名字是SeanQuant，这里我创建的仓库名字的就是<code>seanquant.github.io</code></li><li>设置为<code>Public</code></li></ul></li><li>这里的你的网站其实已经搭建好了，只不过里面的东西是空的而已。之后我们就是通过hexo的生成出来完整的网站数据最后，再部署在github上。</li></ul><h2 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2023/04/02/hello-world/"/>
     <url>/2023/04/02/hello-world/</url>
