@@ -952,7 +952,7 @@ about:
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/SeanQuant", tip: "GitHub" }
     # - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+    - { class: "iconfont icon-wechat-fill", qrcode: "/img/wechat_pay.jpg" }
 
 
 #---------------------------
@@ -1032,11 +1032,16 @@ links:
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
     type: disqus
 
-# 打赏
-# 是否开启打赏功能
-donate: true
-# 打赏文案
-donate_message: 坚持技术分享，你的支持将鼓励我继续创作！
+
+# Donate 自己为 Fluid 主题增加的打赏功能
+# `message` 是打赏提示语，可自定义
+# `alipay` 是支付宝付款码， `wechatpay` 是微信付款码。
+donate:
+  enable: true
+  message: false
+  alipay: /img/alipay.jpg
+  wechatpay: /img/wechat_pay.jpg
+
 
 #---------------------------
 # 以下是配置 JS CSS 等静态资源的 URL 前缀，可以自定义成 CDN 地址，

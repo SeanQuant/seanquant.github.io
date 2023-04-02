@@ -47,12 +47,16 @@ page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
                 <%- inject_point('postMarkdownEnd') %>
               </div>
             <% } %>
+            
+            <%- partial('_partials/donate.ejs') %>
             <hr/>
+            
+            
             <div>
               <%- inject_point('postMetaBottom') %>
 
               <%- inject_point('postCopyright') %>
-
+              
               <% if (theme.post.prev_next.enable && !page.hide) { %>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
@@ -93,9 +97,7 @@ page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
 
 <%- partial('_partials/markdown-plugins') %>
 
-<% if (theme.post.donate!=false && theme.post.donate!=false){ %>
-  <%- partial('_partial/donate.ejs') %>
-<% } %>
+
 
 <% if(theme.post.custom && theme.post.custom.enable && theme.post.custom.content && page.custom !== false) { %>
   <!-- Custom -->
