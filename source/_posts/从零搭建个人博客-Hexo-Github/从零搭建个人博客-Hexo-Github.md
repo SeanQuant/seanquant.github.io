@@ -48,21 +48,21 @@ categories: [前端,]
 
 ## 准备工作
 
-说是从零开始，但是当我真的开始写这篇博客的时候，我也是发现其实还是有很多东西需要考虑的。
+说是从零开始，但是当我真的开始写这篇博客的时候，我也是发现其实还是有一些东西需要考虑的。
 
 **需要准备好的内容:**
 
 根据下面链接，应该基本上都能完成配置。
 
-* Github账户，<https://github.com/> Sign up即可
-* 本地电脑上，安装，确保在命令行下能用即可
-  * Git
+1. 准备一个Github账户，<https://github.com/> Sign up即可
+2. 需要配置好环境，确保在命令行下能用即可
+  1. Git
     * <https://git-scm.com/downloads>
     * <https://www.cnblogs.com/xueweisuoyong/p/11914045.html>
-  * nodejs
+  2. nodejs
     * <https://nodejs.org/en/download> 
     * <https://www.runoob.com/nodejs/nodejs-install-setup.html>
-* 生成本地的ssh-key，上传到个人Github的setting上 
+3. 生成本地的ssh-key，上传到个人Github的setting上 
   * <https://blog.csdn.net/a19990412/article/details/127839737>
 
 
@@ -81,7 +81,7 @@ categories: [前端,]
 下面操作基本都在命令行下进行，但需要注意的是，windows推荐使用git的命令行，而不是默认的powershell，或者是cmd
 不然可能会报错。
 
-* 先创建一个文件夹，用来管理整个博客项目，包括以后写博客存放数据，比如，我放在了`D:\workplace\blogs`
+* 将上述的repo clone下来，然后进入该目录
 * 进入这个目录，然后`npm i hexo-cli -g`
 
 这样就完成了，检查是否完成，可以输入下下命令的命令，看下输出
@@ -93,7 +93,7 @@ hexo -v
 * 如果输出是类似于下面这样就可以了
 
 ```bash
-Sean@LAPTOP-F4VS0BRC MINGW64 /d/workplace/blogs (master)
+Sean@LAPTOP-F4VS0BRC MINGW64 /e/workspace/seanquant.github.io (master)
 $ hexo -v
 INFO  Validating config
 hexo: 6.3.0
@@ -152,12 +152,96 @@ hexo s
 
 这样就算是完成了最基本的事情了。
 
+## 写新文章
+
+* 如果想创建一个新文章，需要用到hexo new命令，也可以用hexo n缩写
+
+```
+hexo n "你的文章标题"
+```
+
+* 文章就会出现在当前目录下的`./source/_post/xxx.md`
+* 当然也可以创建一个对应的文件夹，然后把这个md文件放在里面
+
+
+> 更多也可以看这里 <https://oakland.github.io/2016/05/02/hexo-%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E7%AF%87%E6%96%B0%E7%9A%84post/>
 
 ## push到github上
 
 * 如果是在这个电脑上第一次使用git，需要配置一下，名字跟邮箱。否则，不需要 
 
-```
+```bash
 git config --global user.name "your name"
 git config --global user.email "your email"
 ```
+
+* 需要配置一下 `_config.yml`，这里放的是hexo的配置文件
+  * 以后可能有变化但是关键的几个的东西是逃不掉的
+  1. 改url
+  ```yaml
+  url: https://seanquant.github.io/
+  ```
+  2. 改deploy参数，这里大家都是类似。相应修改一下就行
+  ```yaml
+  deploy:
+    type: 'git'
+    repo: https://github.com/SeanQuant/seanquant.github.io.git
+    branch: master
+  ```
+
+* push上就只需要(d = deploy) 配置好以后，之后就只需要下面这个命令就可以提交了。会更加简单
+  * 注意，提交前最好先生成`hexo g`，有时间还可以`hexo s`本地预览一下，养成好习惯
+
+```
+hexo d
+```
+
+进行完这个操作之后，一般等个十几秒，就可以通过`seanquant.github.io`这个链接进行访问对应的博客了。
+
+
+
+## 多设备写文章
+
+为了实现多设备，其实很简单。就是将一些博文需要的数据，用一个新的分支进行管理
+
+
+1. 如果本地文件夹下没有`.git`文件夹(可能会被隐藏)，就用`git init`将本地仓库初始化
+2. `git checkout -b hexo` 创建一个hexo分支
+3. 创建一个`.gitignore`文件，可以命令行创建`touch .gitnore`，也可以手动创建，里面数据是下面这样
+
+```yaml
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+```
+
+4. 因为是有可能没有远端的的信息的因此需要添加origin
+
+```bash
+git remote add  git@github.com:SeanQuant/seanquant.github.io.git
+```
+
+5. 提交`git push origin hexo`
+
+
+6. 在github上将hexo分支设置为default分支 
+  * 可以参考这个，就在setting里面 <https://docs.github.com/zh/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch>
+  *  为啥要这么做呢？因为每次clone默认clone default分支，你要是选的是master里面每次都需要切换分支，就会很麻烦，不如一步到位
+
+完成这些之后，以后就可以在新设备上操作了。
+
+### 新机器操作
+
+假如有一个新的设备，怎么开始继续创作呢？
+
+**前提** 同样是先保证有 git和node js，这里直接参照上面的教程安装
+
+1. git clone 下来，比如我是`git clone git@github.com:SeanQuant/seanquant.github.io.git`
+2. 进入文件夹，然后`npm i hexo-cli -g` 完成配置
+3. 到这里就可以开始写了，之后还是`hexo d` 提交到github上。当然最基本的还是一样将这个目录给`git push origin hexo`这个分支上
+
