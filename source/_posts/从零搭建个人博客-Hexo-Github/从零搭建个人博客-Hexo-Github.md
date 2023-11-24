@@ -223,7 +223,7 @@ _multiconfig.yml
 4. 因为是有可能没有远端的的信息的因此需要添加origin
 
 ```bash
-git remote add  git@github.com:SeanQuant/seanquant.github.io.git
+git remote add origin git@github.com:SeanQuant/seanquant.github.io.git
 ```
 
 5. 提交`git push origin hexo`
