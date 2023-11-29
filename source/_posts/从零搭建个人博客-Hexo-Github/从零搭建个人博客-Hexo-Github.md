@@ -245,3 +245,20 @@ git remote add origin git@github.com:SeanQuant/seanquant.github.io.git
 2. 进入文件夹，然后`npm i hexo-cli -g` 完成配置
 3. 到这里就可以开始写了，之后还是`hexo d` 提交到github上。当然最基本的还是一样将这个目录给`git push origin hexo`这个分支上
 
+
+
+## For others
+
+相信到这里，灵活一点的哥们儿就会发现一个问题了。
+如果你参考 [新机器操作](#新机器操作), 直接将我的代码拷贝下来
+
+1. 删除本地remote origin，改成指向你自己的github repo
+2. 然后再类似，配置git，nodejs。
+3. `npm i hexo-cli -g`下载依赖包
+4. 修改`_config.yml`中的配置信息改成你自己的
+5. 最后再生成、发布、提交到你自己的repo上，一条龙
+
+你就可以得到一个跟我这个博客站一模一样的翻版...
+
+可以说是相当鬼才了，建议试试。
+
